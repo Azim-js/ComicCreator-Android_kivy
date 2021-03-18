@@ -8,18 +8,69 @@
             size_hint:None,None
             width:100
 
- 
+    AnchorLayout:
+        anchor_x:'right'
+        anchor_y:'top'
+
+        DrawingSpace:
+            size_hint:None,None
+            width:root.width-_tool_box.width
+            height:root.height-_general_options.height-_status_bar.height
+
+    AnchorLayout:
+        anchor_x:'center'
+        anchor_y:'bottom'
+
+        BoxLayout:
+            orientation:'vertical'
+
+            GeneralOptions:
+                id:_general_options
+                size_hint:1,None
+                height:48
+
+            StatusBar:
+                id:_status_bar
+                size_hint:1,None
+                height:24   
+
+
+<ToolBox@GridLayout>:
+    cols:2
+    padding:2
+    ToolButton:
+        text:'O'
+    ToolButton:
+        text:'/'
+    ToolButton:
+        text:'?'    
 
 <ToolButton@ToggleButton>:
     size_hint:None,None
     size:48,48
     group:'tool'
 
-<ToolBox@GridLayout>:
-    cols:2
+<GeneralOptions@BoxLayout>:
+    orientation:'horizontal'
     padding:2
-    ToolButton:
-        text:'/'
-    ToolButton:
-        text:'?'                                 
+    Button:
+        text:'Remove'
+    ToggleButton:
+        text:'Group'
+    Button:
+        text:'color'
+    ToggleButton:
+        text:'Gesturs'
+
+<StatusBar@BoxLayout>
+    orientation:'horizontal'
+    Label:
+        text:'Total Figures: ?'
+    Label:
+        text:"Kivy Started"
+
+<DrawingSpace@RelativeLayout>:
+    Label:
+        markup:True
+        text:'[size=32px] [color=#3e6643] The [/color] [sub] Comic [/sub] [i] [b] Creator [/b] [/i] [/size]'         
 
