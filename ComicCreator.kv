@@ -1,0 +1,25 @@
+<ComicCreator>:
+    AnchorLayout:
+        anchor_x:'left'
+        anchor_y:'top'
+
+        ToolBox:
+            id:_tool_box
+            size_hint:None,None
+            width:100
+
+ 
+
+<ToolButton@ToggleButton>:
+    size_hint:None,None
+    size:48,48
+    group:'tool'
+
+<ToolBox@GridLayout>:
+    cols:2
+    padding:2
+    ToolButton:
+        text:'/'
+    ToolButton:
+        text:'?'                                 
+
