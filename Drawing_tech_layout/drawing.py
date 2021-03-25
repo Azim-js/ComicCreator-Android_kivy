@@ -9,7 +9,7 @@ class DrawingSpace(RelativeLayout):
 
 class DrawingApp(App):
     def build(self):
-        return DrawingSapce()
+        return DrawingSpace()
 
 if __name__=="__main__":
     DrawingApp().run()        
