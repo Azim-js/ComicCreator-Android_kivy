@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.uix.relativelayout import RelativeLayout
 from kivy.lang import Builder
 
-Builder.load_file("design1.kv")
+Builder.load_file("design2.kv")
 
 class DrawingSpace(RelativeLayout):
     pass
