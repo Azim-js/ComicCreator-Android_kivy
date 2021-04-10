@@ -43,12 +43,31 @@
     ToolButton:
         text:'/'
     ToolButton:
-        text:'?'    
+        text:'?'   
+    ToolButton:
+        canvas:
+            Line:
+                circle:24,24,14
+    ToolButton:
+        canvas:
+            Line:
+                points:10,10,38,38 
+    ToolButton:
+        StickMan:
+            pos_hint:{'center_x':.5,'center_y':.5}                       
+
 
 <ToolButton@ToggleButton>:
     size_hint:None,None
     size:48,48
     group:'tool'
+    canvas:
+        PushMatrix:
+        Translate:
+            xy:self.x,self.y
+    canvas.after:
+        PopMatrix:
+
 
 <GeneralOptions@BoxLayout>:
     orientation:'horizontal'
@@ -74,3 +93,31 @@
         markup:True
         text:'[size=32px] [color=#3e6643] The [/color] [sub] Comic [/sub] [i] [b] Creator [/b] [/i] [/size]'         
 
+
+<StickMan@RelativeLayout>:
+    size_hint:None,None
+    size:48,48
+    canvas:
+        PushMatrix:
+        Line:
+            circle:24,38,5
+        Line:
+            points:24,33,24,15
+        Line:
+            points:14,5,24,15
+
+        Line:
+            points:34,5,24,15 
+
+        Translate:
+            y:48-8
+        Rotate:
+            angle:180
+            axis:1,0,0
+
+        Line:
+            points:14,5,24,15
+
+        Line:
+            points:34,5,24,15
+        PopMatrix                            
